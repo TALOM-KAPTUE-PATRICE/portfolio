@@ -1,0 +1,36 @@
+{
+    "HEADER": {
+        "ABOUT": "À propos",
+        "SKILLS": "Compétences",
+        "PROJECTS": "Projets",
+        "CONTACT": "Contact"
+    },
+    "HERO": {
+        "GREETING": "Bonjour, je suis",
+        "INTRO": "Développeur Full-Stack & DevOps",
+        "SUBTITLE": "Je transforme des idées complexes en applications web performantes et intelligentes. Spécialisé en Angular, Spring Boot et l'intégration d'IA.",
+        "ACTION_BUTTON": "Découvrez mes projets"
+    },
+    "ABOUT": {
+        "TITLE": "À propos de moi",
+        "P1": "Développeur passionné avec une solide expérience en génie logiciel et un amour pour la création de solutions web efficaces et évolutives. Mon objectif est de transformer une vision en réalité technique, en apportant une attention particulière à la qualité du code et à l'expérience utilisateur.",
+        "P2": "Du développement backend robuste avec Spring Boot à la création d'interfaces utilisateur dynamiques avec Angular, je maîtrise l'ensemble du cycle de vie du développement. Mes compétences en DevOps me permettent d'assurer un déploiement fluide et une intégration continue performante.",
+        "DOWNLOAD_CV": "Télécharger mon CV"
+    },
+    "SKILLS": {
+        "TITLE": "Compétences Techniques",
+        "SUBTITLE": "Voici les technologies et outils que je maîtrise pour construire des applications modernes."
+    },
+    "PROJECTS": {
+        "TITLE": "Mes Projets Récents",
+        "SUBTITLE": "Une sélection de projets qui démontrent mon savoir-faire technique et ma capacité à résoudre des problèmes complexes."
+    },
+    "CONTACT": {
+        "TITLE": "Entrons en contact",
+        "SUBTITLE": "Je suis actuellement disponible pour des missions freelance ou des opportunités de poste. N'hésitez pas à me contacter. Je vous répondrai dans les plus brefs délais.",
+        "EMAIL_ME": "Envoyez-moi un email"
+    },
+    "FOOTER": {
+        "COPYRIGHT": "Conçu et développé par TALOM Patrice. Tous droits réservés."
+    }
+}

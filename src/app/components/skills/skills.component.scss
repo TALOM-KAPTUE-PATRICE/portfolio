@@ -1,0 +1,27 @@
+.skill-item {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+
+  &:hover {
+    transform: translateY(-8px);
+    background-color: rgba(0, 0, 0, 0.05);
+
+    // Style de l'icône au survol
+    ::ng-deep svg {
+      path {
+        fill: #4f46e5; // Couleur indigo de Tailwind (primary)
+      }
+    }
+  }
+}
+
+// Surcharge pour le thème sombre
+.dark-theme .skill-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+
+  ::ng-deep svg {
+    path {
+      fill: #a5b4fc; // Une version plus claire de l'indigo pour le contraste
+    }
+  }
+}

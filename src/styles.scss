@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+@use '@angular/material/prebuilt-themes/azure-blue.css';
+
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f9fafb; 
+  color: #111827;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+// Styles pour le Thème Sombre
+.dark-theme {
+  background-color: #111827; /* bg-gray-900 */
+  color: #f9fafb; /* text-gray-50 */
+
+  // On surcharge les composants Material
+  .mat-card {
+    background: #1f2937 !important; /* bg-gray-800 */
+    color: #f9fafb !important;
+  }
+
+  .mat-chip {
+    background-color: #374151 !important; /* bg-gray-700 */
+    color: #d1d5db !important; /* text-gray-300 */
+  }
+
+  .mat-toolbar {
+    background: #1f2937 !important;
+  }
+  
+  // Surcharge générale pour les textes
+  h1, h2, h3, h4, p, a, span {
+    color: #f9fafb;
+  }
+  
+  p, span {
+    color: #d1d5db; // Un gris plus clair pour les paragraphes
+  }
+
+  a[mat-stroked-button] {
+    color: #d1d5db;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+
+// Styles pour l'animation au défilement
+[appAnimateOnScroll] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+[appAnimateOnScroll].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

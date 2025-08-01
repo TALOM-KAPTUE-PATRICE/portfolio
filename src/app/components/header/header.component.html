@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="sticky top-0 z-50 shadow-lg flex justify-between">
+  <span>TALOM</span>
+  <div class="flex items-center gap-4">
+    <nav class="hidden md:flex gap-4">
+      <a mat-button href="#about">{{ 'HEADER.ABOUT' | translate }}</a>
+      <a mat-button href="#skills">{{ 'HEADER.SKILLS' | translate }}</a>
+      <a mat-button href="#projects">{{ 'HEADER.PROJECTS' | translate }}</a>
+      <a mat-button href="#contact">{{ 'HEADER.CONTACT' | translate }}</a>
+    </nav>
+    <mat-slide-toggle [checked]="isDarkMode" (change)="toggleTheme()">
+      <mat-icon>{{ isDarkMode ? 'dark_mode' : 'light_mode' }}</mat-icon>
+    </mat-slide-toggle>
+    <button mat-button [matMenuTriggerFor]="menu">{{ currentLang | uppercase }}</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="switchLang('fr')">Français</button>
+      <button mat-menu-item (click)="switchLang('en')">English</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

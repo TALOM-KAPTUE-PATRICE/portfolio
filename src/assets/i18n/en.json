@@ -1,0 +1,36 @@
+{
+    "HEADER": {
+        "ABOUT": "About",
+        "SKILLS": "Skills",
+        "PROJECTS": "Projects",
+        "CONTACT": "Contact"
+    },
+    "HERO": {
+        "GREETING": "Hello, I am",
+        "INTRO": "Full-Stack & DevOps Developer",
+        "SUBTITLE": "I transform complex ideas into powerful and intelligent web applications. Specialized in Angular, Spring Boot, and AI integration.",
+        "ACTION_BUTTON": "Discover my projects"
+    },
+    "ABOUT": {
+        "TITLE": "About Me",
+        "P1": "A passionate developer with a strong background in software engineering and a love for creating efficient, scalable web solutions. My goal is to turn a vision into technical reality, with a special focus on code quality and user experience.",
+        "P2": "From robust backend development with Spring Boot to creating dynamic user interfaces with Angular, I master the entire development lifecycle. My DevOps skills enable me to ensure smooth deployment and efficient continuous integration.",
+        "DOWNLOAD_CV": "Download my CV"
+    },
+    "SKILLS": {
+        "TITLE": "Technical Skills",
+        "SUBTITLE": "Here are the technologies and tools I master to build modern applications."
+    },
+    "PROJECTS": {
+        "TITLE": "My Recent Projects",
+        "SUBTITLE": "A selection of projects that showcase my technical expertise and problem-solving abilities."
+    },
+    "CONTACT": {
+        "TITLE": "Let's Get in Touch",
+        "SUBTITLE": "I am currently available for freelance missions or job opportunities. Feel free to contact me. I will get back to you as soon as possible.",
+        "EMAIL_ME": "Send me an email"
+    },
+    "FOOTER": {
+        "COPYRIGHT": "Designed and developed by TALOM Patrice. All rights reserved."
+    }
+}

@@ -1,0 +1,19 @@
+<section id="about" class="py-16 md:py-24" appAnimateOnScroll>
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">{{ 'ABOUT.TITLE' | translate }}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+      <div class="md:col-span-1 flex justify-center">
+        <!-- Remplacez cette URL par une vraie photo de vous hébergée (ex: sur Cloudinary, Imgur) -->
+        <img src="https://via.placeholder.com/300" alt="Photo de TALOM Patrice" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg">
+      </div>
+      <div class="md:col-span-2">
+        <p class="text-lg mb-4">{{ 'ABOUT.P1' | translate }}</p>
+        <p class="text-lg">{{ 'ABOUT.P2' | translate }}</p>
+        <a mat-raised-button color="primary" href="/assets/cv/mon_cv.pdf" target="_blank" class="mt-8">
+          <mat-icon>download</mat-icon>
+          {{ 'ABOUT.DOWNLOAD_CV' | translate }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

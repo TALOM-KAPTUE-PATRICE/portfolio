@@ -1,0 +1,27 @@
+<section id="projects" class="py-16 md:py-24 bg-white dark:bg-gray-800" appAnimateOnScroll>
+    <div class="container">
+        <h2>Mes Projets</h2>
+        <p class="subtitle">Voici quelques projets sur lesquels j'ai travaillé.</p>
+        <div class="projects-grid">
+            <!-- On boucle sur le tableau de projets -->
+            <div class="project-card" *ngFor="let project of projects">
+                <div class="project-image">
+                    <img [src]="project.imageUrl" [alt]="project.title">
+                </div>
+                <div class="project-content">
+                    <h3>{{ project.title }}</h3>
+                    <div class="technologies">
+                        <span *ngFor="let tech of project.technologies">{{ tech }}</span>
+                    </div>
+                    <p>{{ project.description }}</p>
+                    <div class="project-links">
+                        <a *ngIf="project.projectUrl" [href]="project.projectUrl" target="_blank" class="btn">Voir le
+                            projet</a>
+                        <a *ngIf="project.repoUrl" [href]="project.repoUrl" target="_blank" class="btn-secondary">Code
+                            Source</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+<section id="contact" class="py-16 md:py-24" appAnimateOnScroll>
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold">{{ 'CONTACT.TITLE' | translate }}</h2>
+    <p class="text-lg mt-2 mb-8 max-w-2xl mx-auto">{{ 'CONTACT.SUBTITLE' | translate }}</p>
+    <div class="flex justify-center items-center gap-4 mb-8">
+      <!-- ACTION : Remplacez '#' par vos vrais liens -->
+      <a href="#" target="_blank" mat-icon-button aria-label="GitHub"><svg>...</svg></a> <!-- SVG de GitHub -->
+      <a href="#" target="_blank" mat-icon-button aria-label="LinkedIn"><svg>...</svg></a> <!-- SVG de LinkedIn -->
+    </div>
+    <a href="mailto:votre.email@exemple.com" mat-raised-button color="primary" class="!py-4 !px-8 !text-lg">
+      <mat-icon>email</mat-icon>
+      {{ 'CONTACT.EMAIL_ME' | translate }}
+    </a>
+  </div>
+</section>
