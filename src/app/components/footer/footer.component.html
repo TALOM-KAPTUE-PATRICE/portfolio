@@ -1,5 +1,23 @@
-<footer class="py-6 bg-gray-200 dark:bg-gray-800">
-  <div class="container mx-auto px-4 text-center">
-    <p>© {{ getYear() }} {{ 'FOOTER.COPYRIGHT' | translate }}</p>
+<!-- On ajoute une bordure supérieure et plus d'espace vertical -->
+<footer class="mt-16 border-t border-gray-200 dark:border-gray-700 bg-gray-200 dark:bg-gray-800">
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+      
+      <!-- Texte du copyright -->
+      <p class="text-base text-gray-600 dark:text-gray-400 order-2 sm:order-1">
+        © {{ getYear() }} {{ 'FOOTER.COPYRIGHT' | translate }}
+      </p>
+
+      <!-- Icônes des réseaux sociaux -->
+      <div class="flex gap-4 order-1 sm:order-2">
+        <a [href]="linkedinUrl" target="_blank" aria-label="LinkedIn" class="social-icon">
+          <div [innerHTML]="linkedinIcon"></div>
+        </a>
+        <a [href]="githubUrl" target="_blank" aria-label="GitHub" class="social-icon">
+          <div [innerHTML]="githubIcon"></div>
+        </a>
+      </div>
+
+    </div>
   </div>
 </footer>

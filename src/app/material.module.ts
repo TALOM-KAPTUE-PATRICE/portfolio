@@ -5,7 +5,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'; // <-- AJOUTÉ
-import { MatMenuModule } from '@angular/material/menu';    
+import { MatMenuModule } from '@angular/material/menu';  
+import { MatSidenavModule } from '@angular/material/sidenav'; // <-- AJOUTÉ
+import { MatListModule } from '@angular/material/list';       // <-- AJOUTÉ  
 
 
 @NgModule({
@@ -18,6 +20,10 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatSlideToggleModule, 
     MatMenuModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule
+    
     
     
    

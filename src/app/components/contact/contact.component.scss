@@ -1,0 +1,79 @@
+:host {
+    --primary-color: #4f46e5;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; // 24px
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        border-color: var(--primary-color);
+
+        .arrow-icon {
+            transform: translateX(5px);
+        }
+    }
+
+    h4 {
+        // La correction clé est ici !
+        color: #111827; // text-gray-900. Un noir affirmé.
+        font-weight: 700; // 'bold' pour plus d'impact.
+    }
+
+    p {
+        // On s'assure que l'appel à l'action a une couleur différente
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+}
+
+.contact-icon {
+    // Les SVGs sont injectés, on peut donc styliser le conteneur
+    line-height: 0; // Empêche les espaces indésirables
+
+    svg {
+        width: 32px;
+        height: 32px;
+
+        path {
+            fill: var(--primary-color);
+        }
+    }
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.arrow-icon {
+    color: #9ca3af; // text-gray-400
+    transition: transform 0.3s ease;
+}
+
+// Surcharges pour le Thème Sombre
+.dark-theme {
+    .contact-card {
+        background-color: #1f2937; // bg-gray-800
+        box-shadow: none;
+        border-color: #374151; // bg-gray-700
+
+        &:hover {
+            border-color: var(--primary-color);
+            background-color: #283344;
+        }
+    }
+
+    .arrow-icon {
+        color: #6b7280; // text-gray-500
+    }
+}

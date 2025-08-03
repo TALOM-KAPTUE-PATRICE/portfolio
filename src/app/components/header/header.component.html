@@ -1,19 +1,47 @@
-<mat-toolbar color="primary" class="sticky top-0 z-50 shadow-lg flex justify-between">
-  <span>TALOM</span>
-  <div class="flex items-center gap-4">
-    <nav class="hidden md:flex gap-4">
-      <a mat-button href="#about">{{ 'HEADER.ABOUT' | translate }}</a>
-      <a mat-button href="#skills">{{ 'HEADER.SKILLS' | translate }}</a>
-      <a mat-button href="#projects">{{ 'HEADER.PROJECTS' | translate }}</a>
-      <a mat-button href="#contact">{{ 'HEADER.CONTACT' | translate }}</a>
-    </nav>
-    <mat-slide-toggle [checked]="isDarkMode" (change)="toggleTheme()">
-      <mat-icon>{{ isDarkMode ? 'dark_mode' : 'light_mode' }}</mat-icon>
-    </mat-slide-toggle>
+<mat-toolbar color="primary" class="custom-toolbar sticky  top-0 z-50 shadow-lg flex justify-between items-center">
+  
+  <!-- Conteneur pour le nom animé -->
+  <div class="name-container">
+    <span>TALOM KAPTUE</span>
+    <!-- Le clic est toujours sur les "..." -->
+    <span *ngIf="!isNameExpanded" class="name-ellipsis" (click)="toggleNameDisplay()">...</span>
+    <!-- L'espace est ajouté ici, à l'intérieur de l'élément animé -->
+    <span *ngIf="isNameExpanded" @nameAnimation> PATRICE</span>
+  </div>
+
+  <!-- Conteneur pour les boutons de droite -->
+  <div class="flex items-center gap-2">
+
+    <!-- =============================================================== -->
+    <!-- CORRECTION DE LA VISIBILITÉ POUR LES GRANDS ÉCRANS -->
+    <!-- =============================================================== -->
+    <!-- Ce conteneur entier est caché sur mobile et visible sur desktop -->
+    <div class="hidden md:flex items-center gap-1">
+      <!-- Navigation pour les grands écrans -->
+      <nav>
+        <a mat-button href="#about">{{ 'HEADER.ABOUT' | translate }}</a>
+        <a mat-button href="#skills">{{ 'HEADER.SKILLS' | translate }}</a>
+        <a mat-button href="#projects">{{ 'HEADER.PROJECTS' | translate }}</a>
+        <a mat-button href="#contact">{{ 'HEADER.CONTACT' | translate }}</a>
+      </nav>
+      
+      <!-- Séparateur visuel (optionnel) -->
+      <div class="w-px h-6 bg-white/20 mx-2"></div>
+    </div>
+    <!-- =============================================================== -->
+    <!-- FIN DE LA CORRECTION -->
+    <!-- =============================================================== -->
+
+    <!-- Menu de langue (toujours visible) -->
     <button mat-button [matMenuTriggerFor]="menu">{{ currentLang | uppercase }}</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="switchLang('fr')">Français</button>
       <button mat-menu-item (click)="switchLang('en')">English</button>
     </mat-menu>
+
+    <!-- Bouton Hamburger : visible sur mobile, caché sur desktop -->
+    <button mat-icon-button class="md:hidden" (click)="onMenuToggle()" aria-label="Ouvrir le menu de navigation">
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
 </mat-toolbar>

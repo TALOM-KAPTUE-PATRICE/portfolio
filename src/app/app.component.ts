@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'portfolio';
 
   constructor(
-    private themeService: ThemeService,
+    // private themeService: ThemeService,
     private translate: TranslateService
   ) {
     // Configuration initiale de la traduction
@@ -24,6 +24,6 @@ export class AppComponent {
 
   ngOnInit() {
     // Initialisation du thème au chargement
-    this.themeService.initTheme();
+    // this.themeService.initTheme();
   }
 }

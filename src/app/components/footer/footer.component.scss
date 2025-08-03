@@ -1,0 +1,25 @@
+.social-icon {
+  // Couleur par défaut pour les icônes
+  color: #4b5563; // text-gray-600
+  transition: color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    color: #4f46e5; // Couleur primaire
+    transform: translateY(-3px);
+  }
+}
+
+footer{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px; 
+}
+// Surcharge pour le thème sombre
+.dark-theme {
+  .social-icon {
+    color: #9ca3af; // text-gray-400
+
+    &:hover {
+      color: #a5b4fc; // Couleur primaire plus claire
+    }
+  }
+}

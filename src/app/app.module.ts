@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
@@ -19,12 +18,11 @@ import { AnimateOnScrollDirective } from './directives/animate-on-scroll.directi
 
 // Fonction requise pour AOT (Ahead of Time) compilation
 export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+    return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
 }
 
 @NgModule({
     declarations: [
-
         AppComponent,
         HeaderComponent,
         HeroComponent,

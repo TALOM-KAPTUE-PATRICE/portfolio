@@ -1,12 +1,39 @@
-<section id="skills" class="py-16 md:py-24 bg-white dark:bg-gray-800" appAnimateOnScroll>
+<section id="skills" class="py-16 md:py-24 bg-gray-100 dark:bg-gray-900" appAnimateOnScroll>
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center">{{ 'SKILLS.TITLE' | translate }}</h2>
-    <p class="text-center text-lg mt-2 mb-12">{{ 'SKILLS.SUBTITLE' | translate }}</p>
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-      <div *ngFor="let skill of skills" class="flex flex-col items-center justify-center p-4 skill-item">
-        <div class="w-20 h-20" [innerHTML]="skill.svg"></div>
-        <span class="mt-4 font-semibold text-lg">{{ skill.name }}</span>
+    <!-- On ajoute une couleur de texte explicite pour le titre principal -->
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-gray-50">{{ 'SKILLS.TITLE' | translate }}</h2>
+    <p class="text-center text-lg mt-2 mb-12 max-w-3xl mx-auto text-gray-600 dark:text-gray-300">{{ 'SKILLS.SUBTITLE' | translate }}</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <div class="lg:col-span-1">
+        <!-- On boucle sur les clés des catégories, pas sur les valeurs traduites -->
+        <div *ngFor="let categoryKey of getCategoryKeys(); let i = index" class="mb-6">
+          <!-- On affiche la valeur traduite ici -->
+          <h3 class="text-xl font-semibold mb-4 border-b-2 border-primary pb-2 text-gray-800 dark:text-gray-100">{{ 'SKILLS.' + categoryKey | translate }}</h3>
+          <div class="flex flex-col gap-2">
+            <!-- La boucle ngFor utilise maintenant la clé correcte pour filtrer -->
+            <button *ngFor="let skill of getSkillsByCategory(categoryKey)" 
+                    (click)="selectSkill(skill)"
+                    [class.active]="skill === selectedSkill"
+                    class="skill-list-item">
+              <span>{{ skill.NAME }}</span>
+            </button>
+          </div>
+        </div>
       </div>
+
+      <div class="lg:col-span-2">
+        <div *ngIf="selectedSkill" class="skill-detail-card" [@fadeAnimation]>
+          <h3 class="text-3xl font-bold mb-2">{{ selectedSkill.NAME }}</h3>
+          <p class="text-lg font-semibold text-primary mb-4">{{ selectedSkill.LEVEL }}</p>
+          <div class="w-full bg-gray-200 rounded-full h-2.5 mb-6 dark:bg-gray-700">
+            <div class="bg-primary h-2.5 rounded-full" [style.width.%]="selectedSkill.LEVEL === 'Avancé' ? 90 : 70"></div>
+          </div>
+          <p class="text-lg leading-relaxed">{{ selectedSkill.DESCRIPTION }}</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

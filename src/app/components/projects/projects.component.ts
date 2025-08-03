@@ -1,41 +1,74 @@
-import { Component, OnInit } from '@angular/core';
-import { Project } from '../../models/project.model'; // Importez le modèle
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
+interface ProjectDisplay {
+  id: number;
+  projectKey: string;
+  projectUrl?: string;
+  repoUrl?: string;
+  currentImageIndex: number;
+  // On ajoute une propriété pour stocker la liste des URLs d'images traduites
+  imageUrls: string[]; 
+}
 
 @Component({
   selector: 'app-projects',
-  standalone: false,
+  standalone: false,  
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
- 
+  styleUrls: ['./projects.component.scss']
 })
+export class ProjectsComponent implements OnInit, OnDestroy {
 
+  // On initialise avec une liste vide
+  projects: ProjectDisplay[] = [];
+  
+  // On utilise une souscription pour éviter les fuites de mémoire
+  private langChangeSub!: Subscription;
 
-export class ProjectsComponent implements OnInit {
-
-  projects: Project[] = [
-    {
-      id: 1,
-      title: 'Application Web de Gestion E-commerce avec IA',
-      technologies: ['Angular', 'Spring Boot', 'MySQL', 'JWT', 'AWS'],
-      description: 'Une plateforme complète pour la gestion de produits, commandes et clients, avec un module de recommandation de produits basé sur l\'historique d\'achats.',
-      imageUrl: 'assets/images/project1.jpg', // Placez une image dans src/assets/images/
-      projectUrl: 'https://lien-vers-votre-demo.com',
-      repoUrl: 'https://github.com/votre-nom/votre-projet'
-    },
-    {
-      id: 2,
-      title: 'Pipeline CI/CD pour Application Java',
-      technologies: ['DevOps', 'Jenkins', 'Docker', 'GitHub Actions'],
-      description: 'Mise en place d\'un pipeline d\'intégration et de déploiement continus pour automatiser les tests, la création d\'images Docker et le déploiement sur un serveur.',
-      imageUrl: 'assets/images/project2.jpg',
-      repoUrl: 'https://github.com/votre-nom/votre-pipeline'
-    }
-    
-  ];
-
-  constructor() { }
+  constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
+    // On s'abonne aux changements de langue
+    this.langChangeSub = this.translate.onLangChange.subscribe(() => {
+      this.loadProjects();
+    });
+
+    // On charge les projets une première fois avec la langue actuelle
+    this.loadProjects();
+  }
+
+  // Méthode pour charger et traduire les projets
+  loadProjects(): void {
+    const projectKeys = [
+      { id: 1, projectKey: 'PROJECT_0', projectUrl: '#', repoUrl: '#' },
+      { id: 2, projectKey: 'PROJECT_1', repoUrl: '#' },
+      { id: 3, projectKey: 'PROJECT_2', projectUrl: '#', repoUrl: '#' },
+      { id: 4, projectKey: 'PROJECT_3', projectUrl: '#', repoUrl: '#' },
+      { id: 5, projectKey: 'PROJECT_4', repoUrl: '#' }
+    ];
+
+    this.projects = projectKeys.map(p => ({
+      ...p,
+      currentImageIndex: 0,
+      // Le service de traduction nous donne directement le bon tableau d'images
+      imageUrls: this.translate.instant('PROJECTS_DATA.' + p.id + '.IMAGE_URLS')
+    }));
+  }
+
+  // On se désabonne quand le composant est détruit pour éviter les fuites mémoire
+  ngOnDestroy(): void {
+    if (this.langChangeSub) {
+      this.langChangeSub.unsubscribe();
+    }
+  }
+
+  // Les fonctions de navigation n'ont plus besoin de 'totalImages'
+  nextImage(project: ProjectDisplay): void {
+    project.currentImageIndex = (project.currentImageIndex + 1) % project.imageUrls.length;
+  }
+
+  prevImage(project: ProjectDisplay): void {
+    project.currentImageIndex = (project.currentImageIndex - 1 + project.imageUrls.length) % project.imageUrls.length;
   }
 }

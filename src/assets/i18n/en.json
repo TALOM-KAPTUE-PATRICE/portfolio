@@ -18,17 +18,144 @@
         "DOWNLOAD_CV": "Download my CV"
     },
     "SKILLS": {
-        "TITLE": "Technical Skills",
-        "SUBTITLE": "Here are the technologies and tools I master to build modern applications."
+        "TITLE": "My Technical Skills",
+        "SUBTITLE": "Click on a skill to discover my expertise and how I apply it in my projects.",
+        "CATEGORY_FRONTEND": "Frontend",
+        "CATEGORY_BACKEND": "Backend & Database",
+        "CATEGORY_DEVOPS": "DevOps & Cloud"
     },
+    "SKILLS_DATA": [
+        {
+            "NAME": "Angular",
+            "LEVEL": "Advanced",
+            "CATEGORY": "CATEGORY_FRONTEND",
+            "DESCRIPTION": "I design robust and maintainable Single Page Applications (SPAs). Mastery of components, services, routing, state management with RxJS, and performance optimization for a smooth user experience."
+        },
+        {
+            "NAME": "Spring Boot",
+            "LEVEL": "Advanced",
+            "CATEGORY": "CATEGORY_BACKEND",
+            "DESCRIPTION": "I develop secure and high-performance RESTful APIs with Spring Boot. I have solid experience with Spring Data JPA for persistence, Spring Security for authentication (JWT), and dependency management."
+        },
+        {
+            "NAME": "Docker",
+            "LEVEL": "Intermediate",
+            "CATEGORY": "CATEGORY_DEVOPS",
+            "DESCRIPTION": "I containerize applications (frontend and backend) to ensure a consistent and isolated deployment environment. I create optimized Dockerfiles for lightweight and secure images, and orchestrate containers with Docker Compose."
+        },
+        {
+            "NAME": "Java",
+            "LEVEL": "Advanced",
+            "CATEGORY": "CATEGORY_BACKEND",
+            "DESCRIPTION": "My primary language for backend development. Mastery of OOP, data structures, lambdas, and streams (Java 8+). I use it within the Spring ecosystem to build complex business logic."
+        },
+        {
+            "NAME": "PostgreSQL",
+            "LEVEL": "Intermediate",
+            "CATEGORY": "CATEGORY_BACKEND",
+            "DESCRIPTION": "Designing relational database schemas, writing complex SQL queries, and optimizing performance. I use PostgreSQL as a reliable storage solution for my Spring Boot applications."
+        },
+        {
+            "NAME": "AWS",
+            "LEVEL": "Intermediate",
+            "CATEGORY": "CATEGORY_DEVOPS",
+            "DESCRIPTION": "Deploying and managing applications on key AWS services like EC2 (virtual servers), S3 (object storage), and RDS (managed databases). Understanding of Infrastructure as Code (IaC)."
+        }
+    ],
     "PROJECTS": {
         "TITLE": "My Recent Projects",
         "SUBTITLE": "A selection of projects that showcase my technical expertise and problem-solving abilities."
     },
+    "PROJECTS_DATA": [
+        {
+            "TITLE": "E-commerce Platform \"SmartShop\"",
+            "DESCRIPTION": "A complete e-commerce application with user management, product catalog, cart, and secure Stripe payment integration. The architecture is based on microservices and a robust RESTful API.",
+            "TECHS": [
+                "Angular",
+                "Spring Boot",
+                "JWT",
+                "Stripe API",
+                "PostgreSQL"
+            ],
+            "IMAGE_URLS": [
+                "assets/images/project1-1.png",
+                "assets/images/project1-2.png",
+                "assets/images/project1-3.png"
+            ]
+        },
+        {
+            "TITLE": "Monitoring Dashboard \"InfraView\"",
+            "DESCRIPTION": "A real-time dashboard for monitoring server status. Data is pushed from the backend to the client via WebSockets for minimal latency. The entire system is containerized with Docker and deployed on AWS.",
+            "TECHS": [
+                "Angular",
+                "WebSockets",
+                "Spring Boot",
+                "Docker",
+                "AWS"
+            ],
+            "IMAGE_URLS": [
+                "assets/images/project2-1.png",
+                "assets/images/project2-2.png"
+            ]
+        },
+        {
+            "TITLE": "FinTech Application \"Financika\"",
+            "DESCRIPTION": "A personal budget management platform allowing users to track their expenses, create budgets, and visualize their financial habits through interactive charts (Chart.js).",
+            "TECHS": [
+                "Angular",
+                "Chart.js",
+                "Java",
+                "REST API",
+                "H2 Database"
+            ],
+            "IMAGE_URLS": [
+                "assets/images/project3-1.png",
+                "assets/images/project3-2.png",
+                "assets/images/project3-3.png"
+            ]
+        },
+        {
+            "TITLE": "Booking System \"VitaTrack\"",
+            "DESCRIPTION": "A web application for booking appointments at health centers. It features an interactive calendar, practitioner availability management, and email notification sending.",
+            "TECHS": [
+                "Angular",
+                "FullCalendar",
+                "Spring Boot",
+                "Java Mail",
+                "MySQL"
+            ],
+            "IMAGE_URLS": [
+                "assets/images/project4-1.png",
+                "assets/images/project4-2.png"
+            ]
+        },
+        {
+            "TITLE": "E-learning Platform \"LearnSphere\"",
+            "DESCRIPTION": "An online learning solution where instructors can upload video courses (stored on S3) and students can enroll and track their progress. The project includes admin, instructor, and student roles.",
+            "TECHS": [
+                "Angular Material",
+                "Spring Security",
+                "AWS S3",
+                "DevOps"
+            ],
+            "IMAGE_URLS": [
+                "assets/images/project5-1.png",
+                "assets/images/project5-2.png",
+                "assets/images/project5-3.png"
+            ]
+        }
+    ],
     "CONTACT": {
-        "TITLE": "Let's Get in Touch",
-        "SUBTITLE": "I am currently available for freelance missions or job opportunities. Feel free to contact me. I will get back to you as soon as possible.",
-        "EMAIL_ME": "Send me an email"
+        "TITLE": "Let's Discuss Your Project",
+        "SUBTITLE": "I am passionate about creating innovative solutions and am always open to new opportunities. Whether you have a question or a concrete proposal, feel free to reach out.",
+        "AVAILABILITY_STATUS": "Available for new projects",
+        "LOCATION": "Based in Douala, Cameroon",
+        "METHOD_EMAIL_TITLE": "By Email",
+        "METHOD_EMAIL_ACTION": "Send a message",
+        "METHOD_LINKEDIN_TITLE": "On LinkedIn",
+        "METHOD_LINKEDIN_ACTION": "View my profile",
+        "METHOD_GITHUB_TITLE": "On GitHub",
+        "METHOD_GITHUB_ACTION": "Explore my projects"
     },
     "FOOTER": {
         "COPYRIGHT": "Designed and developed by TALOM Patrice. All rights reserved."
