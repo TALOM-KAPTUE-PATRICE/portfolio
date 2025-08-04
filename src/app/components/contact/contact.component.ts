@@ -33,7 +33,7 @@ export class ContactComponent {
       {
         titleKey: 'CONTACT.METHOD_LINKEDIN_TITLE',
         actionKey: 'CONTACT.METHOD_LINKEDIN_ACTION',
-        link: 'www.linkedin.com/in/patrice-talom-kaptue-5a6461293/', // Votre URL LinkedIn
+        link: 'https://www.linkedin.com/in/patrice-talom-kaptue-5a6461293/', // Votre URL LinkedIn
         // Icône SVG de LinkedIn
         svg: this.sanitizer.bypassSecurityTrustHtml('<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#4f46e5"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-5 6h-3v7h3v-7zM8 9H5v7h3V9zm5-2H5V5h8v2z"/></svg>')
       },
