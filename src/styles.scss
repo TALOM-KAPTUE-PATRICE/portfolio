@@ -1,7 +1,12 @@
 @use "tailwindcss";
 @use '@angular/material/prebuilt-themes/azure-blue.css';
 
-
+html{
+  // Indique au navigateur de laisser un espace de 70px en haut
+  scroll-padding-top: 70px;
+  // C'est cette ligne qui crée l'animation de défilement !
+  scroll-behavior: smooth; 
+}
 html, body { height: 100%; }
 
 body {

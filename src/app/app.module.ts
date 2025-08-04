@@ -16,6 +16,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AnimateOnScrollDirective } from './directives/animate-on-scroll.directive';
 
+
 // Fonction requise pour AOT (Ahead of Time) compilation
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
@@ -31,10 +32,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProjectsComponent,
         ContactComponent,
         FooterComponent,        
-        AnimateOnScrollDirective
+        AnimateOnScrollDirective,
+ 
 
     ],
-
     imports: [
         BrowserModule,
         AppRoutingModule,
