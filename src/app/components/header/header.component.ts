@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from '../../services/theme.service';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -18,7 +18,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ])
   ]
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
     // Gère l'affichage du nom complet
   isNameExpanded = false;
@@ -35,13 +35,13 @@ export class HeaderComponent {
   ) { }
 
   ngOnInit(): void {
-    // this.isDarkMode = this.themeService.isDarkMode();
+    this.isDarkMode = this.themeService.isDarkMode();
     this.currentLang = this.translate.currentLang || 'fr';
   }
 
   toggleTheme() {
-    // this.themeService.toggleTheme();
-    // this.isDarkMode = this.themeService.isDarkMode();
+    this.themeService.toggleTheme();
+     this.isDarkMode = this.themeService.isDarkMode();
   }
 
     // Inverse l'état d'affichage du nom

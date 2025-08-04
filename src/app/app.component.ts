@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ThemeService } from './services/theme.service';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -10,11 +10,11 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'portfolio';
 
   constructor(
-    // private themeService: ThemeService,
+   private themeService: ThemeService,
     private translate: TranslateService
   ) {
     // Configuration initiale de la traduction
@@ -24,6 +24,6 @@ export class AppComponent {
 
   ngOnInit() {
     // Initialisation du thème au chargement
-    // this.themeService.initTheme();
+     this.themeService.initTheme();
   }
 }

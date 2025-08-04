@@ -60,3 +60,18 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.mat-sidenav {
+  // Surcharge pour les éléments de la liste dans notre Sidenav sombre
+  .mat-list-item {
+    color: #d1d5db !important; // text-gray-300
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+  // Surcharge pour les icônes (comme le bouton 'close')
+  .mat-icon-button {
+    color: #d1d5db !important;
+  }
+}

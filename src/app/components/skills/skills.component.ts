@@ -31,20 +31,20 @@ interface SkillDisplay {
 })
 export class SkillsComponent implements OnInit, OnDestroy {
   
-  skills: SkillDisplay[] = [];
+ skills: SkillDisplay[] = [];
   selectedSkill: SkillDisplay | null = null;
   categories: string[] = [];
-
   private langChangeSub!: Subscription;
 
   constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
-    // S'abonner aux changements de langue pour recharger les données
+    // S'abonner aux changements de langue ET au chargement initial
     this.langChangeSub = this.translate.onLangChange.subscribe(() => {
       this.loadSkills();
     });
-    // Charger les données initiales
+
+    // Charger les données initiales de manière sûre
     this.loadSkills();
   }
 
@@ -55,41 +55,40 @@ export class SkillsComponent implements OnInit, OnDestroy {
   }
 
   loadSkills(): void {
-    // Récupérer le tableau complet des compétences depuis le fichier JSON
-    this.skills = this.translate.instant('SKILLS_DATA');
-    
-    // Extraire les catégories uniques et les traduire
-    const categoryKeys = [...new Set(this.skills.map(s => s.CATEGORY))];
-    this.categories = categoryKeys.map(key => this.translate.instant('SKILLS.' + key));
-    
-    // Sélectionner la première compétence par défaut si la liste n'est pas vide
-    if (this.skills.length > 0) {
-      this.selectSkill(this.skills[0]);
-    }
+    // get() est asynchrone, il attend que la traduction soit disponible.
+    this.translate.get('SKILLS_DATA').subscribe((translatedSkills: SkillDisplay[]) => {
+      // Ce code ne s'exécute QUE si 'translatedSkills' est bien un tableau.
+      this.skills = translatedSkills;
+      
+      // On peut maintenant utiliser .map() en toute sécurité
+      const categoryKeys = [...new Set(this.skills.map(s => s.CATEGORY))];
+      
+      this.translate.get(categoryKeys.map(key => 'SKILLS.' + key)).subscribe(translations => {
+        this.categories = Object.values(translations);
+      });
+      
+      if (this.skills.length > 0) {
+        this.selectSkill(this.skills[0]);
+      }
+    });
   }
   
-  /**
-   * Sélectionne une compétence pour l'afficher en détail.
-   * @param skill L'objet compétence à afficher.
-   */
   selectSkill(skill: SkillDisplay): void {
     this.selectedSkill = skill;
   }
 
-    /**
-   * Retourne les clés de catégorie uniques (ex: 'CATEGORY_FRONTEND').
-   * C'est la fonction que notre HTML corrigé utilise.
-   */
   getCategoryKeys(): string[] {
+    // Vérification de sécurité pour éviter les erreurs si this.skills n'est pas encore prêt
+    if (!Array.isArray(this.skills)) {
+      return [];
+    }
     return [...new Set(this.skills.map(s => s.CATEGORY))];
   }
 
-
-  /**
-   * Retourne les compétences filtrées par catégorie.
-   * @param categoryKey La clé de la catégorie (ex: 'CATEGORY_FRONTEND').
-   */
   getSkillsByCategory(categoryKey: string): SkillDisplay[] {
+    if (!Array.isArray(this.skills)) {
+      return [];
+    }
     return this.skills.filter(s => s.CATEGORY === categoryKey);
   }
 }

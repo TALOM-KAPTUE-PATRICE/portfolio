@@ -1,7 +1,7 @@
 <section id="projects" class="py-16 md:py-24" appAnimateOnScroll>
   <div class="container mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">{{ 'PROJECTS.TITLE' | translate }}</h2>
-    <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">{{ 'PROJECTS.SUBTITLE' | translate }}</p>
+    <p class="text-center p1 text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">{{ 'PROJECTS.SUBTITLE' | translate }}</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
@@ -44,18 +44,25 @@
         <mat-card-content class="!pt-4 flex-grow">
           <mat-chip-listbox aria-label="Technologies">
             <div class="flex flex-wrap gap-2 mb-4">
-              <mat-chip *ngFor="let tech of (('PROJECTS_DATA.' + i + '.TECHS') | translate)" class="!font-medium">
+              <!-- La boucle est maintenant beaucoup plus simple et directe -->
+              <mat-chip *ngFor="let tech of project.techs" class="!font-medium">
                 {{ tech }}
               </mat-chip>
             </div>
           </mat-chip-listbox>
-          <p class="text-gray-700 dark:text-gray-300">{{ ('PROJECTS_DATA.' + i + '.DESCRIPTION') | translate }}</p>
+          <p class="text-gray-700 p1 dark:text-gray-300">{{ ('PROJECTS_DATA.' + i + '.DESCRIPTION') | translate }}</p>
         </mat-card-content>
 
-        <mat-card-actions class="!p-4 !pt-2">
+        <!-- =============================================================== -->
+        <!-- LA CORRECTION EST ICI -->
+        <!-- =============================================================== -->
+        <mat-card-actions class="!p-4 !pt-2 flex gap-2">
           <a *ngIf="project.projectUrl" [href]="project.projectUrl" target="_blank" mat-flat-button color="primary">Voir la Démo</a>
           <a *ngIf="project.repoUrl" [href]="project.repoUrl" target="_blank" mat-stroked-button>Code Source</a>
         </mat-card-actions>
+        <!-- =============================================================== -->
+        <!-- FIN DE LA CORRECTION -->
+        <!-- =============================================================== -->
       </mat-card>
 
     </div>
