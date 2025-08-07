@@ -6,6 +6,7 @@
 .filter-button {
   padding: 8px 16px;
   border-radius: 9999px;
+  cursor: pointer;
   font-weight: 500;
   border: 1px solid #d1d5db; // border-gray-300
   color: #374151; // text-gray-700
@@ -105,6 +106,7 @@
   .filter-button {
     border-color: #4b5563; // border-gray-600
     color: #d1d5db; // text-gray-300
+    cursor: pointer;
     &:hover {
       background-color: #312e81; // indigo-900
       border-color: #a5b4fc;
@@ -123,5 +125,5 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     }
   }
-  
+
 }
