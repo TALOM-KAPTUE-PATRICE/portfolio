@@ -18,48 +18,67 @@
         "DOWNLOAD_CV": "Download my CV"
     },
     "SKILLS": {
-        "TITLE": "My Technical Skills",
-        "SUBTITLE": "Click on a skill to discover my expertise and how I apply it in my projects.",
+        "TITLE": "My Technical Arsenal",
+        "SUBTITLE": "From design to production, here are the tools and methodologies I use to transform an idea into a robust and powerful application. Click to learn more.",
         "CATEGORY_FRONTEND": "Frontend",
         "CATEGORY_BACKEND": "Backend & Database",
-        "CATEGORY_DEVOPS": "DevOps & Cloud"
+        "CATEGORY_DEVOPS": "DevOps & Deployment",
+        "CATEGORY_METHODOLOGY": "Analysis & Methodology"
     },
     "SKILLS_DATA": [
         {
             "NAME": "Angular",
             "LEVEL": "Advanced",
             "CATEGORY": "CATEGORY_FRONTEND",
-            "DESCRIPTION": "I design robust and maintainable Single Page Applications (SPAs). Mastery of components, services, routing, state management with RxJS, and performance optimization for a smooth user experience."
+            "DESCRIPTION": "I create reactive and complex user interfaces with Angular. Deep mastery of reusable components, state management (RxJS), lazy loading for optimization, and reactive forms."
         },
         {
             "NAME": "Spring Boot",
             "LEVEL": "Advanced",
             "CATEGORY": "CATEGORY_BACKEND",
-            "DESCRIPTION": "I develop secure and high-performance RESTful APIs with Spring Boot. I have solid experience with Spring Data JPA for persistence, Spring Security for authentication (JWT), and dependency management."
+            "DESCRIPTION": "I build solid and secure backends with Spring Boot. Expert in creating RESTful APIs, integrating Spring Data JPA for data access, and implementing authentication/authorization with Spring Security (JWT)."
+        },
+        {
+            "NAME": "Git & GitHub",
+            "LEVEL": "Advanced",
+            "CATEGORY": "CATEGORY_DEVOPS",
+            "DESCRIPTION": "I use Git and GitHub daily for code versioning, team collaboration (Pull Requests, Code Reviews), and as the cornerstone of Continuous Integration/Continuous Deployment (CI/CD) pipelines to Netlify and Render."
         },
         {
             "NAME": "Docker",
             "LEVEL": "Intermediate",
             "CATEGORY": "CATEGORY_DEVOPS",
-            "DESCRIPTION": "I containerize applications (frontend and backend) to ensure a consistent and isolated deployment environment. I create optimized Dockerfiles for lightweight and secure images, and orchestrate containers with Docker Compose."
+            "DESCRIPTION": "I containerize applications to ensure identical development and production environments, thus eliminating compatibility issues. I write optimized Dockerfiles for fast builds and lightweight images."
+        },
+        {
+            "NAME": "Netlify & Render",
+            "LEVEL": "Intermediate",
+            "CATEGORY": "CATEGORY_DEVOPS",
+            "DESCRIPTION": "Hands-on experience deploying modern full-stack applications. I leverage Netlify for continuous deployment of the Angular frontend (branch deploys, rollbacks) and Render for hosting the Spring Boot backend and PostgreSQL databases."
+        },
+        {
+            "NAME": "Agile Scrum Method",
+            "LEVEL": "Advanced",
+            "CATEGORY": "CATEGORY_METHODOLOGY",
+            "DESCRIPTION": "I work efficiently within agile teams. Accustomed to the Scrum lifecycle: sprints, daily stand-ups, sprint planning, and retrospectives, allowing me to deliver value iteratively and quickly."
+        },
+        {
+            "NAME": "UML & Analysis",
+            "LEVEL": "Advanced",
+            "CATEGORY": "CATEGORY_METHODOLOGY",
+            "DESCRIPTION": "Before writing a single line of code, I model complex solutions with UML (class diagrams, sequence diagrams) using tools like Astah to ensure a coherent and scalable software architecture."
         },
         {
             "NAME": "Java",
             "LEVEL": "Advanced",
             "CATEGORY": "CATEGORY_BACKEND",
-            "DESCRIPTION": "My primary language for backend development. Mastery of OOP, data structures, lambdas, and streams (Java 8+). I use it within the Spring ecosystem to build complex business logic."
+            "DESCRIPTION": "My language of choice for the backend. Mastery of advanced OOP concepts, Design Patterns, and the Java ecosystem to build high-performance business logic within Spring."
         },
         {
             "NAME": "PostgreSQL",
             "LEVEL": "Intermediate",
             "CATEGORY": "CATEGORY_BACKEND",
-            "DESCRIPTION": "Designing relational database schemas, writing complex SQL queries, and optimizing performance. I use PostgreSQL as a reliable storage solution for my Spring Boot applications."
-        },
-        {
-            "NAME": "AWS",
-            "LEVEL": "Intermediate",
-            "CATEGORY": "CATEGORY_DEVOPS",
-            "DESCRIPTION": "Deploying and managing applications on key AWS services like EC2 (virtual servers), S3 (object storage), and RDS (managed databases). Understanding of Infrastructure as Code (IaC)."
+            "DESCRIPTION": "I design optimized relational databases. Proficient in writing high-performance SQL queries, managing transactions, and using PostgreSQL as a reliable data foundation for my applications."
         }
     ],
     "PROJECTS": {

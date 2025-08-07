@@ -2,10 +2,22 @@
   --primary-color: #4f46e5; // variable CSS pour la couleur primaire (indigo-600)
 }
 
+// Conteneur de la liste pour gérer le défilement
+.skill-list-container {
+
+  // Sur les grands écrans, on fixe une hauteur et on active le scroll si besoin
+  @media (min-width: 1024px) {
+    max-height: 500px; // Hauteur maximale avant que le scroll n'apparaisse
+    overflow-y: auto;
+    padding-right: 1rem; // Espace pour la barre de scroll
+  }
+}
+
 // Style pour les boutons dans la liste de gauche
 .skill-list-item {
   display: flex;
   align-items: center;
+  gap: 12px; // Espace entre l'icône et le texte
   width: 100%;
   padding: 12px 16px;
   border-radius: 8px;
@@ -13,16 +25,14 @@
   font-size: 1rem;
   font-weight: 500;
   border: 2px solid transparent;
-  // Couleur de texte explicite pour le thème clair
-  color: #374151; // text-gray-700
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  color: #374151;
+  transition: all 0.2s ease;
 
   &:hover {
     background-color: rgba(79, 70, 229, 0.05);
     color: var(--primary-color);
   }
 
-  // Style pour le bouton ACTIF
   &.active {
     background-color: rgba(79, 70, 229, 0.1);
     color: var(--primary-color);
@@ -30,6 +40,30 @@
     border-color: var(--primary-color);
   }
 }
+
+// Style pour l'icône SVG dans la liste
+.skill-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0; // Empêche l'icône de se rétrécir
+
+  svg {
+    width: 100%;
+    height: 100%;
+
+    path {
+      fill: #6b7280; // Couleur par défaut de l'icône
+      transition: fill 0.2s ease;
+    }
+  }
+}
+
+// Changement de couleur de l'icône au survol/actif
+.skill-list-item:hover .skill-icon svg path,
+.skill-list-item.active .skill-icon svg path {
+  fill: var(--primary-color);
+}
+
 
 // Style pour la carte de détail à droite
 .skill-detail-card {
@@ -42,9 +76,11 @@
   top: 100px;
 
   // On s'assure que les textes à l'intérieur sont de la bonne couleur
-  h3, p {
+  h3,
+  p {
     color: #111827; // text-gray-900
   }
+
   p {
     color: #374151; // text-gray-700 pour les paragraphes
   }
@@ -53,36 +89,70 @@
 .border-primary {
   border-color: var(--primary-color);
 }
+
 .bg-primary {
   background-color: var(--primary-color);
 }
+
 .text-primary {
   color: var(--primary-color);
 }
 
+// Barre de progression améliorée
+.progress-bar-container {
+  width: 100%;
+  background-color: #e5e7eb; // bg-gray-200
+  border-radius: 9999px;
+  height: 10px;
+}
+
+.progress-bar {
+  background-color: var(--primary-color);
+  height: 10px;
+  border-radius: 9999px;
+  transition: width 0.8s ease-in-out; // Animation fluide de la barre
+}
+
+
 // Surcharges pour le Thème Sombre
 .dark-theme {
   .skill-list-item {
-    color: #d1d5db; // text-gray-300
+    color: #d1d5db;
 
     &:hover {
       background-color: rgba(165, 180, 252, 0.1);
-      color: #a5b4fc; // indigo-300
+      color: #a5b4fc;
     }
+
     &.active {
       background-color: rgba(165, 180, 252, 0.15);
-      color: #c7d2fe; // indigo-200
+      color: #c7d2fe;
       border-color: #a5b4fc;
     }
+  }
+
+  .skill-icon svg path {
+    fill: #9ca3af;
+  }
+
+  .skill-list-item:hover .skill-icon svg path,
+  .skill-list-item.active .skill-icon svg path {
+    fill: #a5b4fc;
+  }
+
+  .progress-bar-container {
+    background-color: #374151; // bg-gray-700
   }
 
   .skill-detail-card {
     background-color: #1f2937; // bg-gray-800
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
 
-    h3, p {
+    h3,
+    p {
       color: #f9fafb; // text-gray-50
     }
+
     p {
       color: #d1d5db; // text-gray-300
     }

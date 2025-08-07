@@ -18,48 +18,67 @@
         "DOWNLOAD_CV": "Télécharger mon CV"
     },
     "SKILLS": {
-        "TITLE": "Mes Compétences Techniques",
-        "SUBTITLE": "Cliquez sur une compétence pour découvrir mon expertise et comment je l'applique dans mes projets.",
+        "TITLE": "Mon Arsenal Technique",
+        "SUBTITLE": "De la conception à la production, voici les outils et méthodologies que j'utilise pour transformer une idée en une application robuste et performante. Cliquez pour en savoir plus.",
         "CATEGORY_FRONTEND": "Frontend",
         "CATEGORY_BACKEND": "Backend & Base de Données",
-        "CATEGORY_DEVOPS": "DevOps & Cloud"
+        "CATEGORY_DEVOPS": "DevOps & Déploiement",
+        "CATEGORY_METHODOLOGY": "Analyse & Méthodologie"
     },
     "SKILLS_DATA": [
         {
             "NAME": "Angular",
             "LEVEL": "Avancé",
             "CATEGORY": "CATEGORY_FRONTEND",
-            "DESCRIPTION": "Je conçois des Single Page Applications (SPA) robustes et maintenables. Maîtrise des composants, des services, du routing, de la gestion d'état avec RxJS et de l'optimisation des performances pour une expérience utilisateur fluide."
+            "DESCRIPTION": "Je crée des interfaces utilisateur réactives et complexes avec Angular. Maîtrise approfondie des composants réutilisables, de la gestion d'état (RxJS), du lazy loading pour l'optimisation, et des formulaires réactifs."
         },
         {
             "NAME": "Spring Boot",
             "LEVEL": "Avancé",
             "CATEGORY": "CATEGORY_BACKEND",
-            "DESCRIPTION": "Je développe des API RESTful sécurisées et performantes avec Spring Boot. J'ai une solide expérience avec Spring Data JPA pour la persistance, Spring Security pour l'authentification (JWT) et la gestion des dépendances."
+            "DESCRIPTION": "Je construis des backends solides et sécurisés avec Spring Boot. Expert en création d'API RESTful, intégration de Spring Data JPA pour l'accès aux données et mise en place de l'authentification/autorisation avec Spring Security (JWT)."
+        },
+        {
+            "NAME": "Git & GitHub",
+            "LEVEL": "Avancé",
+            "CATEGORY": "CATEGORY_DEVOPS",
+            "DESCRIPTION": "J'utilise Git et GitHub au quotidien pour le versioning du code, la collaboration en équipe (Pull Requests, Code Reviews) et comme pierre angulaire des pipelines de déploiement continu (CI/CD) vers Netlify et Render."
         },
         {
             "NAME": "Docker",
             "LEVEL": "Intermédiaire",
             "CATEGORY": "CATEGORY_DEVOPS",
-            "DESCRIPTION": "Je conteneurise des applications (frontend et backend) pour garantir un environnement de déploiement cohérent et isolé. Je crée des Dockerfiles optimisés pour des images légères et sécurisées, et j'orchestre les conteneurs avec Docker Compose."
+            "DESCRIPTION": "Je conteneurise les applications pour garantir des environnements de développement et de production identiques, éliminant ainsi les problèmes de compatibilité. J'écris des Dockerfiles optimisés pour des builds rapides et des images légères."
+        },
+        {
+            "NAME": "Netlify & Render",
+            "LEVEL": "Intermédiaire",
+            "CATEGORY": "CATEGORY_DEVOPS",
+            "DESCRIPTION": "Expérience concrète du déploiement d'applications full-stack modernes. J'utilise Netlify pour le déploiement continu du frontend Angular (branch deploys, rollbacks) et Render pour l'hébergement du backend Spring Boot et des bases de données PostgreSQL."
+        },
+        {
+            "NAME": "Méthode Agile Scrum",
+            "LEVEL": "Avancé",
+            "CATEGORY": "CATEGORY_METHODOLOGY",
+            "DESCRIPTION": "Je travaille efficacement au sein d'équipes agiles. Habitué au cycle de vie Scrum : sprints, daily stand-ups, sprint planning, et rétrospectives, ce qui me permet de livrer de la valeur de manière itérative et rapide."
+        },
+        {
+            "NAME": "UML & Analyse",
+            "LEVEL": "Avancé",
+            "CATEGORY": "CATEGORY_METHODOLOGY",
+            "DESCRIPTION": "Avant d'écrire une seule ligne de code, je modélise des solutions complexes avec UML (diagrammes de classes, de séquence) en utilisant des outils comme Astah pour garantir une architecture logicielle cohérente et évolutive."
         },
         {
             "NAME": "Java",
             "LEVEL": "Avancé",
             "CATEGORY": "CATEGORY_BACKEND",
-            "DESCRIPTION": "Langage principal de mon développement backend. Maîtrise de la POO, des structures de données, des lambdas et des streams (Java 8+). Je l'utilise dans le contexte de l'écosystème Spring pour construire une logique métier complexe."
+            "DESCRIPTION": "Mon langage de prédilection pour le backend. Maîtrise des concepts avancés de la POO, des Design Patterns, et de l'écosystème Java pour construire une logique métier performante au sein de Spring."
         },
         {
             "NAME": "PostgreSQL",
             "LEVEL": "Intermédiaire",
             "CATEGORY": "CATEGORY_BACKEND",
-            "DESCRIPTION": "Conception de schémas de base de données relationnelles, écriture de requêtes SQL complexes et optimisation des performances. J'utilise PostgreSQL comme solution de stockage fiable pour mes applications Spring Boot."
-        },
-        {
-            "NAME": "AWS",
-            "LEVEL": "Intermédiaire",
-            "CATEGORY": "CATEGORY_DEVOPS",
-            "DESCRIPTION": "Déploiement et gestion d'applications sur des services AWS clés comme EC2 (serveurs virtuels), S3 (stockage d'objets), et RDS (bases de données gérées). Compréhension de l'infrastructure en tant que code (IaC)."
+            "DESCRIPTION": "Je conçois des bases de données relationnelles optimisées. Compétent en écriture de requêtes SQL performantes, en gestion des transactions et en utilisation de PostgreSQL comme socle de données fiable pour mes applications."
         }
     ],
     "PROJECTS": {
