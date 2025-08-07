@@ -82,13 +82,44 @@
         }
     ],
     "PROJECTS": {
-        "TITLE": "Mes Projets Récents",
-        "SUBTITLE": "Une sélection de projets qui démontrent mon savoir-faire technique et ma capacité à résoudre des problèmes complexes."
+        "TITLE": "Mon Portfolio de Projets",
+        "SUBTITLE": "Chaque projet est une histoire, une solution à un problème. Explorez mes réalisations pour voir mon expertise en action. Filtrez par technologie pour trouver ce qui vous intéresse.",
+        "FILTER_ALL": "Tous",
+        "LOAD_MORE": "Voir plus de projets"
     },
     "PROJECTS_DATA": [
         {
+            "TITLE": "Educamer - Plateforme E-learning",
+            "TYPE": "Plateforme SaaS Full-Stack",
+            "DESCRIPTION": "Solution complète d'apprentissage en ligne conçue pour connecter tuteurs, instructeurs, élèves et parents. L'application gère des rôles utilisateurs distincts avec des permissions spécifiques, l'hébergement de cours et le suivi de la progression.",
+            "POINTS_FORTS": [
+                "Déploiement découplé : Frontend sur Netlify et Backend sur Render.",
+                "Authentification robuste basée sur JWT avec Spring Security.",
+                "Architecture pensée pour l'évolutivité et la facilité de maintenance."
+            ],
+            "TECHS": [
+                "Angular",
+                "Spring Boot",
+                "DevOps",
+                "Netlify",
+                "Render"
+            ],
+            "IMAGE_URLS": [
+                "assets/images/home.png",
+                "assets/images/inscription.png",
+                "assets/images/connexion.png",
+                "assets/images/instructeur.png"
+            ]
+        },
+        {
             "TITLE": "Plateforme E-commerce \"SmartShop\"",
+            "TYPE": "Application Web E-commerce",
             "DESCRIPTION": "Une application e-commerce complète avec gestion des utilisateurs, catalogue de produits, panier, et intégration de paiement sécurisé Stripe. L'architecture est basée sur des microservices et une API RESTful robuste.",
+            "POINTS_FORTS": [
+                "Intégration d'une API de paiement tierce (Stripe).",
+                "Gestion de l'état du panier côté client.",
+                "Base de données relationnelle complexe."
+            ],
             "TECHS": [
                 "Angular",
                 "Spring Boot",
@@ -104,7 +135,13 @@
         },
         {
             "TITLE": "Dashboard de Monitoring \"InfraView\"",
+            "TYPE": "Application Temps Réel & DevOps",
             "DESCRIPTION": "Un tableau de bord en temps réel pour le monitoring de l'état de serveurs. Les données sont poussées du backend vers le client via WebSockets pour une latence minimale. Le tout est conteneurisé avec Docker et déployé sur AWS.",
+            "POINTS_FORTS": [
+                "Communication bidirectionnelle avec WebSockets.",
+                "Conteneurisation complète avec Docker.",
+                "Déploiement sur une infrastructure Cloud (AWS)."
+            ],
             "TECHS": [
                 "Angular",
                 "WebSockets",
@@ -115,52 +152,6 @@
             "IMAGE_URLS": [
                 "assets/images/project2-1.png",
                 "assets/images/project2-2.png"
-            ]
-        },
-        {
-            "TITLE": "Application FinTech \"Financika\"",
-            "DESCRIPTION": "Une plateforme de gestion de budget personnel permettant aux utilisateurs de suivre leurs dépenses, de créer des budgets et de visualiser leurs habitudes financières grâce à des graphiques interactifs (Chart.js).",
-            "TECHS": [
-                "Angular",
-                "Chart.js",
-                "Java",
-                "API REST",
-                "H2 Database"
-            ],
-            "IMAGE_URLS": [
-                "assets/images/project3-1.png",
-                "assets/images/project3-2.png",
-                "assets/images/project3-3.png"
-            ]
-        },
-        {
-            "TITLE": "Système de Réservation \"VitaTrack\"",
-            "DESCRIPTION": "Une application web pour la prise de rendez-vous dans des centres de santé. Elle intègre un calendrier interactif, une gestion des disponibilités des praticiens et l'envoi de notifications par email.",
-            "TECHS": [
-                "Angular",
-                "FullCalendar",
-                "Spring Boot",
-                "Java Mail",
-                "MySQL"
-            ],
-            "IMAGE_URLS": [
-                "assets/images/project4-1.png",
-                "assets/images/project4-2.png"
-            ]
-        },
-        {
-            "TITLE": "Plateforme d'e-learning \"LearnSphere\"",
-            "DESCRIPTION": "Une solution d'apprentissage en ligne où les instructeurs peuvent téléverser des cours vidéo (stockés sur S3) et les étudiants peuvent s'inscrire et suivre leur progression. Le projet inclut un rôle administrateur, instructeur et étudiant.",
-            "TECHS": [
-                "Angular Material",
-                "Spring Security",
-                "AWS S3",
-                "DevOps"
-            ],
-            "IMAGE_URLS": [
-                "assets/images/project5-1.png",
-                "assets/images/project5-2.png",
-                "assets/images/project5-3.png"
             ]
         }
     ],

@@ -1,70 +1,68 @@
 <section id="projects" class="py-16 md:py-24" appAnimateOnScroll>
   <div class="container mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">{{ 'PROJECTS.TITLE' | translate }}</h2>
-    <p class="text-center p1 text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">{{ 'PROJECTS.SUBTITLE' | translate }}</p>
+    <p class="text-center text-lg text-gray-600 dark:text-gray-550 mb-12 max-w-3xl mx-auto">{{ 'PROJECTS.SUBTITLE' | translate }}</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <mat-card *ngFor="let project of projects; let i = index" class="project-card group">
+    <!-- Filtres par technologie -->
+    <div class="flex justify-center flex-wrap gap-2 mb-12">
+      <button (click)="filterProjects('Tous')" [class.active]="activeFilter === 'Tous'" class="filter-button">{{ 'PROJECTS.FILTER_ALL' | translate }}</button>
+      <button *ngFor="let tech of technologies" (click)="filterProjects(tech)" [class.active]="activeFilter === tech" class="filter-button">
+        {{ tech }}
+      </button>
+    </div>
+
+    <!-- Grille des projets filtrés -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" [@listAnimation]="filteredProjects.length">
+      <mat-card *ngFor="let project of filteredProjects" class="project-card">
+        <img mat-card-image [src]="project.data.IMAGE_URLS[0]" [alt]="project.data.TITLE" class="project-thumbnail" (click)="openLightbox(project.data.IMAGE_URLS, 0)">
         
-        <div class="project-image-container">
-          <!-- On boucle directement sur le tableau d'images stocké dans le projet -->
-          <ng-container *ngFor="let imageUrl of project.imageUrls; let imgIndex = index">
-            <img [src]="imageUrl" [alt]="(('PROJECTS_DATA.' + i + '.TITLE') | translate) + ' - Screenshot ' + (imgIndex + 1)"
-                 [class.active]="imgIndex === project.currentImageIndex"
-                 class="project-image">
-          </ng-container>
-
-          <div class="carousel-overlay">
-            <!-- La fonction (click) est maintenant simple et directe, SANS pipe -->
-            <button mat-icon-button class="carousel-control prev" (click)="prevImage(project)">
-              <mat-icon>keyboard_arrow_left</mat-icon>
-            </button>
-            <button mat-icon-button class="carousel-control next" (click)="nextImage(project)">
-              <mat-icon>keyboard_arrow_right</mat-icon>
-            </button>
-          </div>
-
-          <div class="carousel-dots">
-            <!-- On boucle sur project.imageUrls, qui est un simple tableau -->
-            <span *ngFor="let imageUrl of project.imageUrls; let imgIndex = index"
-                  [class.active]="imgIndex === project.currentImageIndex"
-                  class="dot">
-            </span>
-          </div>
-        </div>
-
         <mat-card-header class="!pt-6">
-          <mat-card-title class="!text-xl !font-bold">
-            <!-- Ici, l'utilisation du pipe est correcte car c'est pour l'affichage -->
-            {{ ('PROJECTS_DATA.' + i + '.TITLE') | translate }}
-          </mat-card-title>
+          <div>
+            <p class="text-sm font-semibold text-primary">{{ project.data.TYPE }}</p>
+            <mat-card-title class="!text-xl !font-bold">{{ project.data.TITLE }}</mat-card-title>
+          </div>
         </mat-card-header>
 
         <mat-card-content class="!pt-4 flex-grow">
-          <mat-chip-listbox aria-label="Technologies">
-            <div class="flex flex-wrap gap-2 mb-4">
-              <!-- La boucle est maintenant beaucoup plus simple et directe -->
-              <mat-chip *ngFor="let tech of project.techs" class="!font-medium">
-                {{ tech }}
-              </mat-chip>
-            </div>
-          </mat-chip-listbox>
-          <p class="text-gray-700 p1 dark:text-gray-300">{{ ('PROJECTS_DATA.' + i + '.DESCRIPTION') | translate }}</p>
+          <p class="text-gray-600 dark:text-gray-500 mb-4">{{ project.data.DESCRIPTION }}</p>
+          
+          <h4 class="font-semibold mb-2">Points forts :</h4>
+          <ul class="list-disc list-inside text-gray-600 dark:text-gray-500">
+            <li *ngFor="let point of project.data.POINTS_FORTS">{{ point }}</li>
+          </ul>
         </mat-card-content>
 
-        <!-- =============================================================== -->
-        <!-- LA CORRECTION EST ICI -->
-        <!-- =============================================================== -->
-        <mat-card-actions class="!p-4 !pt-2 flex gap-2">
+        <mat-card-actions class="!p-4 !pt-2 flex flex-wrap gap-2">
           <a *ngIf="project.projectUrl" [href]="project.projectUrl" target="_blank" mat-flat-button color="primary">Voir la Démo</a>
           <a *ngIf="project.repoUrl" [href]="project.repoUrl" target="_blank" mat-stroked-button>Code Source</a>
         </mat-card-actions>
-        <!-- =============================================================== -->
-        <!-- FIN DE LA CORRECTION -->
-        <!-- =============================================================== -->
       </mat-card>
-
     </div>
+
+    <!-- Pagination (simplifiée pour l'instant) -->
+    <!-- <div class="text-center mt-12">
+      <button mat-raised-button>{{ 'PROJECTS.LOAD_MORE' | translate }}</button>
+    </div> -->
   </div>
 </section>
+
+<!-- =============================================================== -->
+<!-- LIGHTBOX (visionneuse d'images) -->
+<!-- =============================================================== -->
+<div *ngIf="isLightboxOpen" class="lightbox-backdrop" (click)="closeLightbox()" [@lightboxAnimation]>
+  <button mat-icon-button class="lightbox-close-button" (click)="closeLightbox()">
+    <mat-icon>close</mat-icon>
+  </button>
+  
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <button mat-icon-button class="lightbox-nav-button prev" (click)="prevLightboxImage()">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    
+    <img [src]="lightboxImages[currentLightboxImageIndex]" class="lightbox-image" alt="Project screenshot">
+    
+    <button mat-icon-button class="lightbox-nav-button next" (click)="nextLightboxImage()">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+</div>

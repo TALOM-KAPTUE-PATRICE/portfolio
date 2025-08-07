@@ -82,13 +82,43 @@
         }
     ],
     "PROJECTS": {
-        "TITLE": "My Recent Projects",
-        "SUBTITLE": "A selection of projects that showcase my technical expertise and problem-solving abilities."
+        "TITLE": "My Project Portfolio",
+        "SUBTITLE": "Each project is a story, a solution to a problem. Explore my work to see my expertise in action. Filter by technology to find what interests you.",
+        "FILTER_ALL": "All",
+        "LOAD_MORE": "Load more projects"
     },
     "PROJECTS_DATA": [
         {
+            "TITLE": "Educamer - E-learning Platform",
+            "TYPE": "Full-Stack SaaS Platform",
+            "DESCRIPTION": "A complete online learning solution designed to connect tutors, instructors, students, and parents. The application manages distinct user roles with specific permissions, course hosting, and progress tracking.",
+            "POINTS_FORTS": [
+                "Decoupled Deployment: Frontend on Netlify and Backend on Render.",
+                "Robust JWT-based authentication with Spring Security.",
+                "Architecture designed for scalability and ease of maintenance."
+            ],
+            "TECHS": [
+                "Angular",
+                "Spring Boot",
+                "DevOps",
+                "Netlify",
+                "Render"
+            ],
+            "IMAGE_URLS": [
+                "assets/images/educamer-1.png",
+                "assets/images/educamer-2.png",
+                "assets/images/educamer-3.png"
+            ]
+        },
+        {
             "TITLE": "E-commerce Platform \"SmartShop\"",
+            "TYPE": "E-commerce Web Application",
             "DESCRIPTION": "A complete e-commerce application with user management, product catalog, cart, and secure Stripe payment integration. The architecture is based on microservices and a robust RESTful API.",
+            "POINTS_FORTS": [
+                "Third-party payment API integration (Stripe).",
+                "Client-side cart state management.",
+                "Complex relational database schema."
+            ],
             "TECHS": [
                 "Angular",
                 "Spring Boot",
@@ -104,7 +134,13 @@
         },
         {
             "TITLE": "Monitoring Dashboard \"InfraView\"",
+            "TYPE": "Real-time & DevOps Application",
             "DESCRIPTION": "A real-time dashboard for monitoring server status. Data is pushed from the backend to the client via WebSockets for minimal latency. The entire system is containerized with Docker and deployed on AWS.",
+            "POINTS_FORTS": [
+                "Bidirectional communication with WebSockets.",
+                "Full containerization with Docker.",
+                "Deployment on a Cloud infrastructure (AWS)."
+            ],
             "TECHS": [
                 "Angular",
                 "WebSockets",
@@ -115,52 +151,6 @@
             "IMAGE_URLS": [
                 "assets/images/project2-1.png",
                 "assets/images/project2-2.png"
-            ]
-        },
-        {
-            "TITLE": "FinTech Application \"Financika\"",
-            "DESCRIPTION": "A personal budget management platform allowing users to track their expenses, create budgets, and visualize their financial habits through interactive charts (Chart.js).",
-            "TECHS": [
-                "Angular",
-                "Chart.js",
-                "Java",
-                "REST API",
-                "H2 Database"
-            ],
-            "IMAGE_URLS": [
-                "assets/images/project3-1.png",
-                "assets/images/project3-2.png",
-                "assets/images/project3-3.png"
-            ]
-        },
-        {
-            "TITLE": "Booking System \"VitaTrack\"",
-            "DESCRIPTION": "A web application for booking appointments at health centers. It features an interactive calendar, practitioner availability management, and email notification sending.",
-            "TECHS": [
-                "Angular",
-                "FullCalendar",
-                "Spring Boot",
-                "Java Mail",
-                "MySQL"
-            ],
-            "IMAGE_URLS": [
-                "assets/images/project4-1.png",
-                "assets/images/project4-2.png"
-            ]
-        },
-        {
-            "TITLE": "E-learning Platform \"LearnSphere\"",
-            "DESCRIPTION": "An online learning solution where instructors can upload video courses (stored on S3) and students can enroll and track their progress. The project includes admin, instructor, and student roles.",
-            "TECHS": [
-                "Angular Material",
-                "Spring Security",
-                "AWS S3",
-                "DevOps"
-            ],
-            "IMAGE_URLS": [
-                "assets/images/project5-1.png",
-                "assets/images/project5-2.png",
-                "assets/images/project5-3.png"
             ]
         }
     ],
