@@ -10,8 +10,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class FooterComponent {
 
   // ACTION : Remplacez '#' par vos vrais liens
-  linkedinUrl = '#';
-  githubUrl = '#';
+  linkedinUrl = 'https://www.linkedin.com/in/patrice-talom-kaptue-5a6461293/';
+  githubUrl = 'https://github.com/TALOM-KAPTUE-PATRICE';
 
   // Icônes SVG pour une qualité parfaite
   linkedinIcon: SafeHtml;

@@ -34,6 +34,10 @@
   }
 }
 
+.project-thumbnail-container {
+  position: relative; // Nécessaire pour positionner le badge
+}
+
 .project-thumbnail {
   cursor: pointer;
   aspect-ratio: 16 / 9;
@@ -41,6 +45,32 @@
   transition: filter 0.3s ease;
   &:hover {
     filter: brightness(1.1);
+  }
+}
+
+// Style pour le badge de statut
+.status-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.75rem; // 12px
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+  // Couleurs en fonction du statut
+  &.status-déployé, &.status-deployed {
+    background-color: #16a34a; // Vert
+  }
+  &.status-en, &.status-in { // 'en cours' ou 'in progress'
+    background-color: #f59e0b; // Ambre
+  }
+  &.status-archivé, &.status-archived {
+    background-color: #64748b; // Gris
   }
 }
 

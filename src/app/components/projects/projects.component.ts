@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 interface TranslatedProject {
   TITLE: string;
   TYPE: string;
+  STATUS: string; 
   DESCRIPTION: string;
   POINTS_FORTS: string[];
   TECHS: string[];
@@ -84,8 +85,9 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   loadProjects(): void {
     const projectMetaData = [
       { id: 1, url: 'https://educamer.netlify.app', repo: 'https://github.com/TALOM-KAPTUE-PATRICE/educamer2' },
-      { id: 2, url: '#', repo: '#' },
-      { id: 3, url: '#', repo: '#' }
+      { id: 2, url: '#', repo: 'https://github.com/TALOM-KAPTUE-PATRICE/maintenanceV2' }, 
+      { id: 3, url: '#', repo: '#' },
+      { id: 4, url: '#', repo: '#' }
       // Ajoutez les métadonnées des autres projets ici...
     ];
 

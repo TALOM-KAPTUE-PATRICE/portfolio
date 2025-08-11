@@ -14,7 +14,15 @@
     <!-- Grille des projets filtrés -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" [@listAnimation]="filteredProjects.length">
       <mat-card *ngFor="let project of filteredProjects" class="project-card">
-        <img mat-card-image [src]="project.data.IMAGE_URLS[0]" [alt]="project.data.TITLE" class="project-thumbnail" (click)="openLightbox(project.data.IMAGE_URLS, 0)">
+        
+        <!-- Conteneur pour l'image et le badge de statut -->
+        <div class="project-thumbnail-container">
+          <img mat-card-image [src]="project.data.IMAGE_URLS[0]" [alt]="project.data.TITLE" class="project-thumbnail" (click)="openLightbox(project.data.IMAGE_URLS, 0)">
+          <!-- Badge de statut -->
+          <span class="status-badge" [ngClass]="'status-' + project.data.STATUS.split(' ')[0].toLowerCase()">
+            {{ project.data.STATUS }}
+          </span>
+        </div>
         
         <mat-card-header class="!pt-6">
           <div>
@@ -33,8 +41,8 @@
         </mat-card-content>
 
         <mat-card-actions class="!p-4 !pt-2 flex flex-wrap gap-2">
-          <a *ngIf="project.projectUrl" [href]="project.projectUrl" target="_blank" mat-flat-button color="primary">Voir la Démo</a>
-          <a *ngIf="project.repoUrl" [href]="project.repoUrl" target="_blank" mat-stroked-button>Code Source</a>
+          <a *ngIf="project.projectUrl && project.projectUrl !== '#'" [href]="project.projectUrl" target="_blank" mat-flat-button color="primary">Voir la Démo</a>
+          <a *ngIf="project.repoUrl && project.repoUrl !== '#'" [href]="project.repoUrl" target="_blank" mat-stroked-button>Code Source</a>
         </mat-card-actions>
       </mat-card>
     </div>

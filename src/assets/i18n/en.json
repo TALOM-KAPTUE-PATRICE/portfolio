@@ -91,6 +91,7 @@
         {
             "TITLE": "Educamer - E-learning Platform",
             "TYPE": "Full-Stack SaaS Platform",
+            "STATUS": "Deployed & Live",
             "DESCRIPTION": "A complete online learning solution designed to connect tutors, instructors, students, and parents. The application manages distinct user roles with specific permissions, course hosting, and progress tracking.",
             "POINTS_FORTS": [
                 "Decoupled Deployment: Frontend on Netlify and Backend on Render.",
@@ -105,19 +106,48 @@
                 "Render"
             ],
             "IMAGE_URLS": [
-                "assets/images/educamer-1.png",
-                "assets/images/educamer-2.png",
-                "assets/images/educamer-3.png"
+                "assets/images/home.png",
+                "assets/images/inscription.png",
+                "assets/images/connexion.png",
+                "assets/images/instructeur.png"
+            ]
+        },
+        {
+            "TITLE": "Maint-Pro - Industrial Maintenance Management",
+            "TYPE": "Full-Stack SaaS Platform (Product Vision)",
+            "STATUS": "In Progress",
+            "DESCRIPTION": "A comprehensive web application to digitize and optimize the entire lifecycle of maintenance operations. From project management (tickets) to invoicing, including quotes and purchasing processes, Maint-Pro provides a centralized and secure solution for industrial sector companies.",
+            "POINTS_FORTS": [
+                "Stateless architecture with secure JWT authentication and token blacklist management.",
+                "Real-time notifications via WebSockets (STOMP) for instant collaboration.",
+                "Fine-grained permission management based on roles and positions for enhanced security.",
+                "KPI dashboard for strategic business monitoring."
+            ],
+            "TECHS": [
+                "Angular",
+                "Spring Boot",
+                "JWT",
+                "WebSockets",
+                "Docker",
+                "PostgreSQL"
+            ],
+            "IMAGE_URLS": [
+                "assets/images/dashboard.png",
+                "assets/images/dashboard1.png",
+                "assets/images/dashboard2.png"
             ]
         },
         {
             "TITLE": "E-commerce Platform \"SmartShop\"",
             "TYPE": "E-commerce Web Application",
+            "STATUS": "In Progress",
             "DESCRIPTION": "A complete e-commerce application with user management, product catalog, cart, and secure Stripe payment integration. The architecture is based on microservices and a robust RESTful API.",
             "POINTS_FORTS": [
                 "Third-party payment API integration (Stripe).",
                 "Client-side cart state management.",
-                "Complex relational database schema."
+                "Complex relational database schema.",
+                "Full containerization with Docker.",
+                "Deployment on a Cloud infrastructure (AWS)."
             ],
             "TECHS": [
                 "Angular",
@@ -135,11 +165,10 @@
         {
             "TITLE": "Monitoring Dashboard \"InfraView\"",
             "TYPE": "Real-time & DevOps Application",
+            "STATUS": "Archived",
             "DESCRIPTION": "A real-time dashboard for monitoring server status. Data is pushed from the backend to the client via WebSockets for minimal latency. The entire system is containerized with Docker and deployed on AWS.",
             "POINTS_FORTS": [
-                "Bidirectional communication with WebSockets.",
-                "Full containerization with Docker.",
-                "Deployment on a Cloud infrastructure (AWS)."
+                "Bidirectional communication with WebSockets."
             ],
             "TECHS": [
                 "Angular",
