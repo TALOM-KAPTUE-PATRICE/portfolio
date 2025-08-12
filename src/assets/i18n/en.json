@@ -132,6 +132,7 @@
                 "PostgreSQL"
             ],
             "IMAGE_URLS": [
+                "assets/images/accueil.png",
                 "assets/images/dashboard.png",
                 "assets/images/dashboard1.png",
                 "assets/images/dashboard2.png"
